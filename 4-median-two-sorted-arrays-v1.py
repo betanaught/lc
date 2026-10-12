@@ -2,7 +2,7 @@ import random
 
 class Solution:
     def findMedianSortedArrays(self, nums1: list[int], nums2: list[int]) -> float:
-        nums = sorted(nums1 + nums2)
+        nums = sorted(nums1 + nums2) # cowardly sort, be a man
         if len(nums) % 2 != 0: # if len is odd
             m = len(nums) // 2
             median = nums[m]
