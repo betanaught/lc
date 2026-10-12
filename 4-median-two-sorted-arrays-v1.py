@@ -12,11 +12,32 @@ class Solution:
             median = (nums[m1] + nums[m2]) / 2
         return median
 
-len1 = random.randint(0, 1000)
-len2 = random.randint(0, 1000)
-nums1 = [random.randint(-10**6, 10**6) for i in range(len1)]
-nums2 = [random.randint(-10**6, 10**6) for i in range(len1)]
+rand_len1 = random.randint(0, 1000)
+rand_len2 = random.randint(0, 1000)
+rand_nums1 = [random.randint(-10**6, 10**6) for i in range(rand_len1)]
+rand_nums2 = [random.randint(-10**6, 10**6) for i in range(rand_len2)]
+
+test_cases = {
+    "case1": {
+        "nums1": [1, 3],
+        "nums2": [2]
+        },
+    "case2": {
+        "nums1": [1, 2],
+        "nums2": [3, 4]
+        },
+    "case_rand": {
+        "nums1": rand_nums1,
+        "nums2": rand_nums2
+        }
+    }
 
 solution = Solution()
-output = solution.findMedianSortedArrays(nums1, nums2)
-print(output)
+for key in test_cases:
+    print(f"Testing case: {key}")
+    nums1 = test_cases[key]["nums1"]
+    nums2 = test_cases[key]["nums2"]
+    print(f"nums1 values: {nums1}")
+    print(f"nums2 values: {nums2}")
+    output = solution.findMedianSortedArrays(nums1, nums2)
+    print(output)
